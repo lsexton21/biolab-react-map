@@ -42,7 +42,7 @@ const UserSpeciesItem = (props) => {
     setDeleteModal(!deleteModal);
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/species/${props.id}`,
         "DELETE",
         { Authorization: "Bearer " + authCtx.token }
       );

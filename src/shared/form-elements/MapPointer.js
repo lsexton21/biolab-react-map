@@ -52,7 +52,7 @@ const MapPointer = (props) => {
           initialViewState={viewState}
           onMove={(evt) => setViewState(evt.viewState)}
           mapStyle="mapbox://styles/mapbox/satellite-v9"
-          mapboxAccessToken={process.env.MAPBOX_TOKEN}
+          mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         >
           {!showMarker && (
             <Marker
