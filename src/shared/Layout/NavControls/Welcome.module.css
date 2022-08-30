@@ -1,0 +1,258 @@
+.welcome-control {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-family: "Gochi Hand", cursive;
+  font-size: 30px;
+  text-shadow: 1px 1px 10px black;
+  z-index: 1;
+}
+
+.real-container {
+  font-size: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.real {
+  margin: 0px;
+  transform: rotateX(90deg);
+  animation: 6s ease-in moveRight;
+}
+
+.sub-real {
+  margin: 0px;
+  color: #9ae07f;
+}
+.research {
+  position: relative;
+  bottom: 10px;
+  left: 30px;
+  margin: 0px;
+  transform: rotateX(90deg);
+  animation: 3s ease-in-out forwards moveUp ;
+}
+.data {
+  position: relative;
+  bottom: 130px;
+  left: 30px;
+  margin: 0px;
+  transform: rotateX(90deg);
+  animation: 3s ease-in-out 3s rotateUpAndDown; 
+}
+.bioLab-and-nav-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+  width: 100%;
+}
+.bioLab-container {
+  font-size: 90px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.the {
+  position: relative;
+  margin: 0px;
+  font-size: 60px;
+  transform: rotateX(90deg);
+  color: #9ae07f;
+  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+}
+
+.bioLab {
+  margin: 0px 30px;
+  position: relative;
+  transform: rotateX(90deg);
+  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+}
+.hthi {
+  position: relative;
+  top: 50px;
+  right: 10px;
+  margin: 0px;
+  font-size: 60px;
+  transform: rotateX(90deg);
+  color: #9ae07f;
+  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+}
+
+.guestMode-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  right: 100px;
+  transform: rotateX(90deg);
+  animation: 0.5s ease-in rotateUp 6s forwards;
+}
+
+.directions {
+  padding: 0px;
+  font-family: "Gochi Hand", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  width: 300px;
+  height: 80px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 10px;
+  text-shadow: none;
+}
+
+.login {
+  padding: 10px;
+  color: white;
+  font-family: "Gochi Hand", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  width: 120px;
+  height: 80px;
+  margin-top: 10px;
+  border-radius: 5%;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.login:hover {
+  background-color: white;
+  color: black;
+}
+
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  12% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  95% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(800px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  95% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    display: none;
+  }
+}
+
+@keyframes rotateUpAndDown {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  10% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  90% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes openingBioLab {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+.auth-container {
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  top: 150px;
+  text-shadow: 1px 1px 10px black;
+}
+
+.auth, .continue {
+  font-family: cursive; 
+  color: white;
+  font-size: 40px;
+  font-family: "Gochi Hand", cursive;
+  transition: .3s;
+  text-shadow: 1px 1px 10px black;
+}
+
+.auth:hover, .continue:hover {
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.continue {
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+@keyframes rotateUp {
+    0% {
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }

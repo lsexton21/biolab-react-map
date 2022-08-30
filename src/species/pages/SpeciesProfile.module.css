@@ -1,0 +1,133 @@
+.speciesProfileContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 360px;
+  width: 360px;
+  background-color: white;
+  box-shadow: 0 0 20px black;
+  padding: 10px;
+  border-radius: 5%;
+  top: 200px;
+}
+
+.bumpSpecies {
+  animation: 0.3s ease-in-out bump;
+}
+
+.speciesImgContainer {
+  position: absolute;
+  text-align: center;
+  bottom: 250px;
+  width: 100%;
+}
+
+.speciesImg {
+  height: 250px;
+  width: 250px;
+  border-radius: 10%;
+  position: relative;
+  bottom: 90px;
+  border: 5px solid white;
+  background-color: white;
+  box-shadow: 3px 3px 5px black;
+}
+
+.speciesNamesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 15px;
+}
+
+.speciesCommonName {
+  font-family: "Gochi Hand", cursive;
+  color: #9ae07fe1;
+  text-shadow: 1px 1px 1px black;
+  font-size: 30px;
+  position: relative;
+}
+
+.speciesScientificName {
+  position: relative;
+  font-family: "Gochi Hand", cursive;
+  color: black;
+  text-transform: lowercase;
+  text-shadow: none;
+  font-size: 15px;
+}
+
+.speciesNamesDivider {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  height: 5px;
+  background-color: #000;
+  width: 70%;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.control_body__observations {
+  height: 125px;
+  width: 100%;
+  margin: 5px;
+  box-shadow: inset 1px 1px 5px black;
+  padding: 10px;
+}
+
+.userProfileContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 140px;
+}
+
+.userProfiles {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .control {
+    left: 700px;
+  top: 100px;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  }
+}
+
+@keyframes welcomeStartUp {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+  to {
+    opacity: 1;
+    left: 70%;
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(105%);
+    opacity: .8;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}

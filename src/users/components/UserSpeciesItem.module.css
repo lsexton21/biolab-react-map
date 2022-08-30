@@ -1,0 +1,113 @@
+.species-item {
+  width: 300px;
+  height: 400px;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: .15s;
+  font-size: 12px;
+}
+
+.species-item:hover {
+  border: 2px solid #64b4e5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+  transform: scale(101%);
+}
+
+.species-item__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  row-gap: 10px;
+  height: 100%;
+}
+
+.species-item__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.species-item__title h2{
+  display: inline;
+  font-family: "Gochi Hand";
+  color: #9ae07fe1;
+  text-shadow: 0.5px 0.5px 0 black;
+  font-size: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 5px;
+  width: 60%;
+}
+.species-item__title h3{
+  width: 40%;
+}
+
+.species-item__image {
+  width: 290px;
+  height: 290px;
+  border: 1px solid black;
+  border-radius: 30px;
+  object-fit: cover;
+  
+}
+
+.species-item__info h2,
+.species-item__info h3,
+.species-item__info p {
+  margin: 0 0 0.5rem 0;
+}
+
+.species-item__actions {
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-top: 5px;
+  transition: 1s;
+}
+
+.species-item__modal-content {
+  padding: 0;
+}
+
+.species-item__modal-actions {
+  text-align: right;
+  padding: 1rem;
+}
+.species-item__modal-header {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: #2a006e;
+  color: white;
+}
+
+.species-item__actions button,
+.species-item__actions a {
+  margin: 0.5rem;
+}
+
+.moreInfo-container {
+  height: 15rem;
+  width: 100%;
+}
+
+.taxaContainer {
+display: flex;
+justify-content: right;
+}
+
+.taxa {
+  background-color: #007da7dd;
+  color:white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  margin: 5px;
+}

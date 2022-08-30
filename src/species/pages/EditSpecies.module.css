@@ -1,0 +1,17 @@
+.species-form {
+  list-style: none;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 40rem;
+  background: white;
+}
+
+.cancelBtnContainer {
+  display:flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.cancelBtn {
+  cursor: pointer;
+}

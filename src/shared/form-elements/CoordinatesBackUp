@@ -1,0 +1,112 @@
+import { useState, useRef, useEffect, Fragment } from "react";
+import styles from "./CoordinatesUpload.module.css";
+import Button from "./Button";
+import Input from "./Input";
+import {
+  VALIDATOR_REQUIRE,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_MIN,
+  VALIDATOR_MAX,
+} from "../../shared/form-elements/validators";
+
+//Font Awesome imports
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MapPointer from "../../shared/form-elements/MapPointer";
+import Modal from "../../shared/UI/Modal";
+
+const CoordinatesUpload = (props) => {
+  const [coordinatesModal, setCoordinatesModal] = useState(false);
+  const [latValue, setLatValue] = useState(0);
+  const [lngValue, setLngValue] = useState(0);
+
+  const openCoordinatesModalHandler = (e) => {
+    e.preventDefault();
+    setCoordinatesModal(true);
+  };
+  library.add(faLocationCrosshairs);
+
+  const pickCoordinatesHandler = (event) => {
+    setLatValue(event.lat);
+    console.log(event.lat);
+    setLngValue(event.lng);
+    props.onInput("lat", latValue, true);
+    props.onInput("lng", lngValue, true);
+  };
+
+  const closeCoordinatesModalHandler = () => {
+    setCoordinatesModal(false);
+  };
+
+  return (
+    <Fragment>
+      {coordinatesModal && (
+        <Modal
+          background={"white"}
+          show={coordinatesModal}
+          onClick={closeCoordinatesModalHandler}
+        >
+          <MapPointer
+            onInput={pickCoordinatesHandler}
+            onSelect={closeCoordinatesModalHandler}
+          />
+        </Modal>
+      )}
+      <div className={styles.coordinates}>
+        <div style={{ fontWeight: "bold" }}>{props.label}</div>
+        <div className={styles.locationBtnContainer}>
+          <Button
+            style={{
+              height: "50px",
+              width: "50px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onClick={openCoordinatesModalHandler}
+          >
+            <FontAwesomeIcon
+              className={styles.locationBtn}
+              icon="fa-solid fa-location-crosshairs"
+            />
+          </Button>
+        </div>
+        <div className={styles.lngLat}>
+          <Input
+            id="lat"
+            element="input"
+            label="Latitude"
+            initialValid={true}
+            placeholder={32.733300574939676}
+            validators={[
+              VALIDATOR_MIN(32),
+              VALIDATOR_MAX(33),
+              VALIDATOR_REQUIRE(),
+            ]}
+            errorText="For San Diego, should be a number between 32 and 33"
+            onInput={props.onInput}
+            value={latValue}
+          />
+          <Input
+            id="lng"
+            element="input"
+            label="Longitude"
+            placeholder={-117.21914785687474}
+            initialValid={true}
+            validators={[
+              VALIDATOR_MIN(-118),
+              VALIDATOR_MAX(-117),
+              VALIDATOR_REQUIRE(),
+            ]}
+            errorText="For San Diego, should be a number between -117 and -118"
+            onInput={props.onInput}
+            value={lngValue}
+          />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default CoordinatesUpload;

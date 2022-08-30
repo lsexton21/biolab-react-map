@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+.list a {
+    display: flex;
+align-items: center;
+justify-content: center;
+    height: 30px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid gray;
+    margin: 1px;
+}
+
+.list a:hover {
+    background-color: #007da7dd;
+    color: white;
+}

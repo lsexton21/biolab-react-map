@@ -1,0 +1,72 @@
+.navBarHeader {
+    width: 100%;
+    background-color: #007da7dd;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    height: 180px;
+    display: flex;
+    justify-content:space-between;
+    position: absolute;
+    z-index: 2;
+    padding: 20px 30px;
+}
+
+.openBackground {
+    animation: 1s ease-in-out forwards openBackground 7s;
+}
+
+.fixedBackground {
+    animation: 5s ease-in-out forwards fixedBackground infinite;
+}
+
+.openBackgroundImmediately {
+    animation: 1s ease-in-out forwards openBackground;
+}
+
+.closeBackground {
+    animation: 1s ease-out forwards closeBackground;
+}
+
+@keyframes fixedBackground {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 90%)
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+    }
+}
+
+@keyframes openBackground {
+    0% {
+        height: 200px;
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%)
+    }
+
+    85% {
+        height: 1020px;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+    100% {
+        height: 1000px;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+}
+  
+@keyframes closeBackground {
+    0% {
+        height: 800px;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+
+    15% {
+        height: 820px;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+    100% {
+        height: 180px;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+    }
+}

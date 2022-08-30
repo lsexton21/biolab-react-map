@@ -1,0 +1,82 @@
+.edit-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 1rem;
+    font-size: 16px;
+    color: black;
+    background-color: rgba(256, 256, 256,.95);
+    text-shadow: none;
+    border-radius: 5px;
+    
+  }
+  .edit-moveIn {
+    animation: moveLeft 0.5s ease-in-out 0.5s forwards;
+  }
+  
+  .edit-moveOut {
+    animation: moveRight 0.5s ease-in-out forwards;
+  }
+  
+  .edit-form input {
+    width: 20rem;
+  }
+  
+  .header {
+    color: #007EA7;
+    font-size: 30px;
+    font-family: "Gochi Hand", cursive;
+    text-shadow: 1px 1px 1px black;
+  }
+  .back {
+    margin: 0px;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+  }
+  
+  .edit-form button {
+    margin: 0.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    min-width: 25rem;
+  }
+  
+  .pagination {
+    font-size: 25px;
+    font-family: "Gochi Hand", cursive;
+    color: #007EA7;
+    cursor: pointer;
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      left: 100%
+    }
+    
+    85% {
+      left: -10%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes moveRight {
+    from {
+      left: 0%
+    }
+    
+    15% {
+      left: -10%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  

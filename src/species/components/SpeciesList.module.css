@@ -1,0 +1,13 @@
+.species-list {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .species-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style-type: none;
+  }
+}
