@@ -27,6 +27,14 @@ const SpeciesProfile = (props) => {
 
   useEffect(() => {
     setBumpSpecies(true);
+    if (props.speciesData) {
+      filteredSpeciesData = props.speciesData.filter(
+        (species) => species._id === params.speciesId
+      );
+      filteredUserData = props.usersData.filter(
+        (user) => user._id === filteredSpeciesData[0].creators[0]
+      );
+    }
     const timer = setTimeout(() => {
       setBumpSpecies(false);
     }, 1000);
@@ -34,10 +42,6 @@ const SpeciesProfile = (props) => {
       clearTimeout(timer);
     };
   }, [params]);
-
-  const currentSpecies = () => {
-    return;
-  };
 
   return (
     <Fragment>
