@@ -6,9 +6,9 @@
 }
 
 .image-upload__preview {
-  width: 13rem;
-  height: 13rem;
-  border: 1px solid #ccc;
+  width: 15rem;
+  height: 15rem;
+  border: 0.1rem solid #ccc;
   border-radius: 5%;
   display: flex;
   justify-content: center;

@@ -1,16 +1,16 @@
 .species-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 920px;
+  width: 90%;
+  max-width: 1000px;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 1000px) {
   .species-list {
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 100%;
   }
 }
 
@@ -19,18 +19,18 @@
   background-color: rgb(255, 255, 255);
   color: rgb(109, 109, 109);
   
-  padding: 10px;
-  border: 1px dashed gray;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 1rem;
+  border: 0.1rem dashed gray;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .addSpeciesLink:hover {
   color: black;  
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 .addSpeciesLink:active {
   background-color: gray;

@@ -1,69 +1,93 @@
 .welcomeContainer {
     position: relative;
     display: flex;
+    opacity: 0;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    height: 260px;
-    width: 560px;
+    height: 26rem;
+    width: 56rem;
     background-color: rgba(255, 255, 255, 0.86);
-    box-shadow: 0 0 20px black;
-    padding: 10px;
-    left: 600px;
+    box-shadow: 0 0 2rem black;
+    padding: 1rem;
+    left: 60rem;
     clip-path: polygon(21% 0, 100% 0%, 100% 100%, 0 100%);
     animation: 1s ease-in-out moveLeft 6s forwards;
 }
+
+@media (max-width: 1300px) {.welcomeContainer {
+    animation: 0.5s ease-in-out moveLeft forwards;
+}}
 
 .hideWelcomeContainer {
     animation: 0.5s ease-in-out moveDown forwards;
 }
   
 .welcomeTextContainer {
-    margin-left: 140px;
-    width: 350px;
+    margin-left: 14rem;
+    width: 35rem;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Gochi Hand", cursive;
-    font-size: 30px;
+    font-size: 3rem;
     text-align: center;
 }
   
 .welcomeTitle {
 color: #007da7dd;
-text-shadow: 1px 1px 1px black;
-font-size: 40px;
-padding: 10px;
+text-shadow: 0.1rem 0.1rem 0.1rem black;
+font-size: 4rem;
+padding: 1rem;
 
 }
   
 .welcomeText {
 color: black;
-padding-top: 10px;
+padding-top: 1rem;
 line-height: 1;
-width: 270px;
+width: 27rem;
+}
+
+.okay {
+    font-size: 2.5rem;
+  font-family: "Gochi Hand", cursive;
+  color: #007EA7;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+
+.okay:hover {
+    color: #015976dd;
+    
+}
+
+.okay:active {
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
 }
 
 @keyframes moveLeft {
     from {
-        left: 600px;
+        opacity: 0;
+        left: 60rem;
     }
     to {
-        left: 0px;
+        opacity: 1;
+        left: 0rem;
     }
 }
 
 @keyframes moveDown {
     from {
-        left: 0px;
-        top: 0px;
+        left: 0rem;
+        top: 0rem;
         opacity:1;
     }
     to {
-        left: 0px;
-        top: 550px;
+        left: 0rem;
+        top: 55rem;
         opacity:0;
     }
 }

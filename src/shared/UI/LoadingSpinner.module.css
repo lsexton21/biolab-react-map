@@ -9,17 +9,17 @@
 
 .spinner {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 8rem;
+  height: 8rem;
 }
 .spinner:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  width: 6.4rem;
+  height: 6.4rem;
+  margin: 0.8rem;
   border-radius: 50%;
-  border: 6px solid teal;
+  border: 0.6rem solid teal;
   border-color: teal transparent teal transparent;
   animation: spinner 1.2s linear infinite;
 }

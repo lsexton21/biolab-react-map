@@ -50,10 +50,10 @@ const TaxaSelection = (props) => {
   };
 
   return (
-    <fieldset style={{ marginBottom: "20px" }}>
+    <fieldset style={{ marginBottom: "2rem" }}>
       <legend
         style={{ fontWeight: "bold" }}
-        className={!errorToggle && isTouched && styles.invalid}
+        className={!errorToggle && isTouched ? styles.invalid : ""}
       >
         {props.label}
       </legend>

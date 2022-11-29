@@ -13,19 +13,49 @@ code {
 }
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  font-family: sans-serif;
-  margin: 0;
-  background-color: #fff;
+html {
+  height: 100%;
+  font-size: 62.5%;
+  
 }
+
+@media (max-width: 1300px) {html {font-size: 62.5%;}} /*tablet-landscape*/
+@media (max-width: 1000px) {html {font-size: 50%;}} /*tablet-portrait*/
+@media (min-width: 1500px) {html {font-size: 62.5%;}} /*desktop*/
 
 .centered {
-  margin: 1rem auto;
+  margin: 0.6rem auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h1 {
+  font-size: 8rem;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+

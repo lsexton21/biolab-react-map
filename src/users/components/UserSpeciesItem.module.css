@@ -1,58 +1,116 @@
 .species-item {
-  width: 300px;
-  height: 400px;
-  margin: 2px;
+  max-width: 30rem;
+  margin: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #785964d8;
+  box-shadow: 0 0.3rem 1.5rem rgb(0, 0, 0);
+  border-bottom: 0.5rem solid #2e2327;
+  border-radius: 1rem 1rem 2rem 2rem;
   transition: .15s;
-  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .species-item {
+    max-width: none;
+    box-shadow: none;
+    margin: 1rem;
+  }
 }
 
 .species-item:hover {
-  border: 2px solid #64b4e5;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
-  transform: scale(101%);
+  border-bottom: 0.5rem solid #030202;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.695);
+  transform: scale(100.5%)
 }
 
-.species-item__info {
+.species-item__infoContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  justify-content: center;
-  row-gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
   height: 100%;
+}
+
+.species-item__info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.species-item__observationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 1rem;
+  width: 100%;
+  height: 100%;
+  font-weight: 100;
+  text-align: left;
+  background-color: white;
+  box-shadow: inset 0.1em 0.2em 0.5em black;
+  text-overflow: hidden;
+}
+
+.species-item__observationContainer h3, p{
+  width: 100%;
+  text-align: left;
+}
+
+.species-item__observationContainer p {
+  font-size: 1.5rem;
 }
 
 .species-item__title {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .species-item__title h2{
   display: inline;
   font-family: "Gochi Hand";
-  color: #9ae07fe1;
-  text-shadow: 0.5px 0.5px 0 black;
-  font-size: 25px;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0 black;
+  font-size: 2.5rem;
   overflow: hidden;
   white-space: nowrap;
-  padding-left: 5px;
-  width: 60%;
+  width: 100%;
+  text-align: center;
 }
-.species-item__title h3{
-  width: 40%;
+
+@media (max-width: 480px) {
+  .species-item__title h2 {
+    font-size: 3.5rem;
+  }
+}
+
+.species-item__title h3 {
+  color: white;
+  width: 100%;
+  text-align: right;
+  padding-right: 3rem;
 }
 
 .species-item__image {
-  width: 290px;
-  height: 290px;
-  border: 1px solid black;
-  border-radius: 30px;
+  width: 95%;
+  aspect-ratio: 1 / 1;
+  border: 0.3rem solid white;
+  border-radius: 2rem;
   object-fit: cover;
   
 }
@@ -60,15 +118,18 @@
 .species-item__info h2,
 .species-item__info h3,
 .species-item__info p {
-  margin: 0 0 0.5rem 0;
+  margin: 0.5rem;
 }
 
+
 .species-item__actions {
-  padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
   text-align: center;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  margin-top: 5px;
+  border-top: 0.3rem solid #ccc;
+  margin-top: 0.5rem;
   transition: 1s;
 }
 
@@ -78,36 +139,55 @@
 
 .species-item__modal-actions {
   text-align: right;
-  padding: 1rem;
+  padding: 0.6rem;
 }
 .species-item__modal-header {
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 0.6rem 0.3rem;
   background: #2a006e;
   color: white;
 }
 
-.species-item__actions button,
-.species-item__actions a {
-  margin: 0.5rem;
+.species-item__actions button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  height: 4rem;
+  font-size: 1.3rem;
 }
 
 .moreInfo-container {
-  height: 15rem;
+  height: 1.5rem;
   width: 100%;
 }
 
 .taxaContainer {
+  padding: 1rem;
+  height: 8%;
 display: flex;
 justify-content: right;
+align-items: center;
+width: 100%;
 }
 
 .taxa {
-  background-color: #007da7dd;
-  color:white;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100%;
+  color:#007da7dd;
+  border: 0.2rem solid #007da7dd;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .taxa {
+    font-size: 2rem;
+  }
 }

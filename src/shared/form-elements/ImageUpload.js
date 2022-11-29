@@ -62,7 +62,7 @@ const ImageUpload = (props) => {
         <div className="image-upload__preview">
           {previewUrl ? (
             <img
-              style={{ border: "3px solid #9ae07f" }}
+              style={{ border: "0.3rem solid #9ae07f" }}
               src={previewUrl}
               alt="Preview"
             />
@@ -74,7 +74,7 @@ const ImageUpload = (props) => {
             />
           )}
         </div>
-        <Button type="button" onClick={pickImgHandler}>
+        <Button inverse type="button" onClick={pickImgHandler}>
           PICK IMAGE
         </Button>
       </div>

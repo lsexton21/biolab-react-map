@@ -65,7 +65,7 @@ export const AuthContextProvider = (props) => {
     setToken(newToken);
 
     const updatedExpirationTime =
-      expirationTime || new Date(new Date().getTime() + 1000 * 60 * 60);
+      expirationTime || new Date(new Date().getTime() + 1000 * 60 * 60 * 2);
 
     localStorage.setItem(
       "userData",

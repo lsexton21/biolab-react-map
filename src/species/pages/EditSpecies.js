@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 
 import Input from "../../shared/form-elements/Input";
 import {
@@ -17,9 +17,11 @@ import AuthContext from "../../shared/context/auth-context";
 import styles from "./EditSpecies.module.css";
 import LoadingSpinner from "../../shared/UI/LoadingSpinner";
 import ErrorModal from "../../shared/errors/ErrorModal";
+import ModalOnModal from "../../shared/UI/ModalOnModal";
 
 const EditSpecies = (props) => {
   const [loadedSpecies, setLoadedSpecies] = useState();
+  const [editSpecies, setEditSpecies] = useOutletContext();
   const { sendRequest, isLoading, clearError, error } = useHttpClient();
   const authCtx = useContext(AuthContext);
   const userId = useParams().userId;
@@ -142,79 +144,92 @@ const EditSpecies = (props) => {
     );
   }
 
+  const cancelEditSpecies = () => {
+    setEditSpecies(false);
+    navigate(`/users/${userId}/myspecies`);
+  };
+
   return (
     <Fragment>
       <ErrorModal error={error} onClick={clearError} />
       {!isLoading && loadedSpecies && (
-        <form
-          className={styles["species-form"]}
-          onSubmit={speciesSubmitHandler}
+        <ModalOnModal
+          style={{ background: "rgba(0,0,0,0.5)" }}
+          show={editSpecies}
+          onCancel={cancelEditSpecies}
+          onClick={cancelEditSpecies}
+          header={"Edit Species"}
         >
-          <Input
-            id="commonName"
-            element="input"
-            type="text"
-            label="Common Name or Type of Species"
-            validators={[VALIDATOR_REQUIRE()]}
-            errorText="Please enter a valid common name."
-            onInput={inputHandler}
-            initialValue={loadedSpecies.commonName}
-            initialValid={true}
-          ></Input>
-          <Input
-            id="scientificName"
-            element="input"
-            type="text"
-            label="What is the scientific name of your species (not required)"
-            validators={[]}
-            errorText="Please enter a valid scientific name."
-            onInput={inputHandler}
-            initialValue={loadedSpecies.scientificName}
-            initialValid={true}
-          ></Input>
-          <Input
-            id="description"
-            element="textarea"
-            label="In one sentence, describe specific details that you can observe of your species"
-            validators={[VALIDATOR_MINLENGTH(5), VALIDATOR_REQUIRE()]}
-            errorText="Please enter a valid description (at least 5 characters)."
-            onInput={inputHandler}
-            initialValue={loadedSpecies.description}
-            initialValid={true}
-          />
-          <Input
-            id="dateFound"
-            element="input"
-            type="date"
-            label="On which date did you find your specimen?"
-            validators={[VALIDATOR_REQUIRE()]}
-            errorText="Please enter a valid date."
-            onInput={inputHandler}
-            initialValue={loadedSpecies.dateFound}
-            initialValid={true}
-          />
-          <CoordinatesUpload
-            id="coordinates"
-            label="Input the coordinates of where you found your species"
-            onInput={inputHandler}
-            initialValue={loadedSpecies.coordinates}
-            initialValid={true}
-          />
-          <TaxaSelection
-            id="taxa"
-            label="Select each category that applies to your species"
-            onInput={inputHandler}
-            initialValue={loadedSpecies.taxa}
-            initialValid={true}
-          />
-          <Button
-            style={{ width: "100%" }}
-            type="submit"
-            disabled={!formState.isValid}
+          <form
+            className={styles["species-form"]}
+            onSubmit={speciesSubmitHandler}
           >
-            UPDATE SPECIES
-          </Button>
-        </form>
+            <Input
+              id="commonName"
+              element="input"
+              type="text"
+              label="Common Name or Type of Species"
+              validators={[VALIDATOR_REQUIRE()]}
+              errorText="Please enter a valid common name."
+              onInput={inputHandler}
+              initialValue={loadedSpecies.commonName}
+              initialValid={true}
+            ></Input>
+            <Input
+              id="scientificName"
+              element="input"
+              type="text"
+              label="What is the scientific name of your species (not required)"
+              validators={[]}
+              errorText="Please enter a valid scientific name."
+              onInput={inputHandler}
+              initialValue={loadedSpecies.scientificName}
+              initialValid={true}
+            ></Input>
+            <Input
+              id="description"
+              element="textarea"
+              label="In one sentence, describe specific details that you can observe of your species"
+              validators={[VALIDATOR_MINLENGTH(5), VALIDATOR_REQUIRE()]}
+              errorText="Please enter a valid description (at least 5 characters)."
+              onInput={inputHandler}
+              initialValue={loadedSpecies.description}
+              initialValid={true}
+            />
+            <Input
+              id="dateFound"
+              element="input"
+              type="date"
+              label="On which date did you find your specimen?"
+              validators={[VALIDATOR_REQUIRE()]}
+              errorText="Please enter a valid date."
+              onInput={inputHandler}
+              initialValue={loadedSpecies.dateFound}
+              initialValid={true}
+            />
+            <CoordinatesUpload
+              id="coordinates"
+              label="Input the coordinates of where you found your species"
+              onInput={inputHandler}
+              initialValue={loadedSpecies.coordinates}
+              initialValid={true}
+            />
+            <TaxaSelection
+              id="taxa"
+              label="Select each category that applies to your species"
+              onInput={inputHandler}
+              initialValue={loadedSpecies.taxa}
+              initialValid={true}
+            />
+            <Button
+              style={{ width: "100%" }}
+              type="submit"
+              disabled={!formState.isValid}
+            >
+              UPDATE SPECIES
+            </Button>
+          </form>
+        </ModalOnModal>
       )}
     </Fragment>
   );

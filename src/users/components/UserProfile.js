@@ -10,16 +10,16 @@ const UserProfile = (props) => {
           <div className={styles["profileImg-container"]}>
             <img
               className={styles.profileImg}
-              src={`${process.env.REACT_APP_BACKEND_URL}/${props.userData.profileImg}`}
+              src={`${process.env.REACT_APP_AWS_URL}/${props.userData.profileImg}`}
               alt="Lucas Sexton"
             ></img>
           </div>
           <div className={styles["info-container"]}>
-            <h2>
+            <h3>
               {props.userData.firstName} {props.userData.lastName}
-            </h2>
+            </h3>
             <div className={styles.spacer}></div>
-            <h3>Species Documented: {props.userData.species.length}</h3>
+            <h4>Species Documented: {props.userData.species.length}</h4>
           </div>
         </div>
       )}

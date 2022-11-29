@@ -11,7 +11,7 @@ const UserItem = (props) => {
         <Link to={`/users/${props.id}`}>
           <div className={styles["user-item__image"]}>
             <Avatar
-              src={`${process.env.REACT_APP_BACKEND_URL}/${props.profileImg}`}
+              src={`${process.env.REACT_APP_AWS_URL}/${props.profileImg}`}
               alt={props.firstName}
             />
           </div>

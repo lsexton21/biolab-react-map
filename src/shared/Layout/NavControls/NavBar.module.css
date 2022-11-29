@@ -2,12 +2,12 @@
     width: 100%;
     background-color: #007da7dd;
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
-    height: 180px;
+    height: 18rem;
     display: flex;
     justify-content:space-between;
     position: absolute;
     z-index: 2;
-    padding: 20px 30px;
+    padding: 2rem 3rem;
 }
 
 .openBackground {
@@ -19,7 +19,7 @@
 }
 
 .openBackgroundImmediately {
-    animation: 1s ease-in-out forwards openBackground;
+    animation: 0.5s ease-out forwards openBackground;
 }
 
 .closeBackground {
@@ -41,32 +41,32 @@
 
 @keyframes openBackground {
     0% {
-        height: 200px;
+        height: 20rem;
         clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%)
     }
 
     85% {
-        height: 1020px;
+        height: 82rem;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
     100% {
-        height: 1000px;
+        height: 92rem;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 }
   
 @keyframes closeBackground {
     0% {
-        height: 800px;
+        height: 80rem;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 
     15% {
-        height: 820px;
+        height: 82rem;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
     100% {
-        height: 180px;
+        height: 18rem;
         clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
     }
 }

@@ -25,7 +25,7 @@ const HomepageMap = (props) => {
   const mapRef = useRef();
   const [startUp, setStartUp] = useState(true);
   const [showSpeciesContainer, setShowSpeciesContainer] = useState(false);
-  const [closeWelcomeMsg, setCloseWelcomeMsg] = useState(false);
+  const [showWelcomeDirections, setWelcomeDirections] = useState(true);
   const authCtx = useContext(AuthContext);
   const [displayMarkers, setDisplayMarkers] = useState(!!authCtx.isLoggedIn);
   const { clearError, error, isLoading } = useHttpClient();
@@ -35,7 +35,7 @@ const HomepageMap = (props) => {
       return {
         longitude: -117.216941,
         latitude: 32.732314,
-        zoom: 14.8,
+        zoom: 16,
         pitch: 50,
         bearing: 70,
       };
@@ -72,7 +72,7 @@ const HomepageMap = (props) => {
   };
 
   const markerHandler = () => {
-    setCloseWelcomeMsg(true);
+    setWelcomeDirections(true);
     const timer = setTimeout(() => {
       setShowSpeciesContainer(true);
       setStartUp(false);
@@ -80,6 +80,10 @@ const HomepageMap = (props) => {
     return () => {
       clearTimeout(timer);
     };
+  };
+
+  const welcomeDirectionsHandler = () => {
+    setWelcomeDirections(!showWelcomeDirections);
   };
 
   const delayRandomizer = (taxa) => {
@@ -110,7 +114,7 @@ const HomepageMap = (props) => {
           <Map
             ref={mapRef}
             onLoad={(e) =>
-              e.target.flyTo({ zoom: 17, bearing: 10, duration: 10000 })
+              e.target.flyTo({ zoom: 17, bearing: 10, duration: 8000 })
             }
             initialViewState={viewState}
             onMove={(evt) => setViewState(evt.viewState)}
@@ -119,14 +123,20 @@ const HomepageMap = (props) => {
           >
             {startUp && !authCtx.isLoggedIn && (
               <aside className={styles.welcomeDirectionsAsideContainer}>
-                <WelcomeDirections hide={closeWelcomeMsg} />
+                <WelcomeDirections
+                  show={showWelcomeDirections}
+                  onShow={welcomeDirectionsHandler}
+                />
               </aside>
             )}
 
             {showSpeciesContainer && (
               <aside className={styles.speciesProfileAsideContainer}>
                 <div className={styles.speciesProfileAside}>
-                  <Outlet />
+                  <Outlet
+                    context={[showSpeciesContainer, setShowSpeciesContainer]}
+                  />
+                  ;
                 </div>
               </aside>
             )}

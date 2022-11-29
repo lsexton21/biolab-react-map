@@ -1,9 +1,10 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext } from "react";
 import { useForm } from "../../shared/hooks/formHook";
 import Input from "../../shared/form-elements/Input";
 import ImageUpload from "../../shared/form-elements/ImageUpload";
 import CoordinatesUpload from "../../shared/form-elements/CoordinatesUpload";
 import TaxaSelection from "../../shared/form-elements/TaxaSelection";
+import LoadingSpinnerNew from "../../shared/UI/LoadingSpinnerNew";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
@@ -140,6 +141,7 @@ const NewSpecies = (props) => {
           onInput={inputHandler}
           errorText="Please select at least one category"
         />
+        {isLoading && <LoadingSpinnerNew />}
         <Button
           style={{ width: "100%" }}
           type="submit"

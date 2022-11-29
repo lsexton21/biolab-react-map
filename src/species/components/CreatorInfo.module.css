@@ -3,21 +3,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100px;
+    height: 10rem;
 }
 
 .profile_image {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 8rem;
 }
 
 .profile_image img {
     border-radius: 50%;
-    border: 2px solid black;
-    height: 80px;
-    width: 80px;
+    border: 0.2rem solid black;
+    height: 8rem;
+    width: 8rem;
     object-fit: cover;
 }
 
@@ -25,6 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px
+    height: 5rem;
 
 }

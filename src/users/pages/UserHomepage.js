@@ -30,7 +30,7 @@ const UserHomepage = (props) => {
 
   return (
     <Fragment>
-      <ErrorModal show={error} onClick={clearError} />
+      <ErrorModal error={!!error} onClick={clearError} />
       {!isLoading && filteredUserData[0] && filteredSpeciesData ? (
         <div className={styles.homepageContainer}>
           <ul className={styles.homepageLinks}>
@@ -40,7 +40,7 @@ const UserHomepage = (props) => {
                 isActive
                   ? {
                       color: "black",
-                      borderBottom: "4px solid #9ae07f",
+                      borderBottom: "0.4rem solid #9ae07f",
                       backgroundColor: "white",
                       boxShadow: "none",
                     }
@@ -55,7 +55,7 @@ const UserHomepage = (props) => {
                 isActive
                   ? {
                       color: "black",
-                      borderBottom: "4px solid #9ae07f",
+                      borderBottom: "0.4rem solid #9ae07f",
                       backgroundColor: "white",
                       boxShadow: "none",
                     }
@@ -70,7 +70,7 @@ const UserHomepage = (props) => {
                 isActive
                   ? {
                       color: "black",
-                      borderBottom: "4px solid #9ae07f",
+                      borderBottom: "0.4rem solid #9ae07f",
                       backgroundColor: "white",
                       boxShadow: "none",
                     }
@@ -78,7 +78,7 @@ const UserHomepage = (props) => {
               }
             >
               <FontAwesomeIcon
-                style={{ marginRight: "10px" }}
+                style={{ marginRight: "1rem" }}
                 icon="fa-solid fa-gear"
               />
               Settings

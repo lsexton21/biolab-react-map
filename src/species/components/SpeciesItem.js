@@ -10,7 +10,7 @@ const SpeciesItem = (props) => {
       <Card>
         <Link to={`${props.id}`}>
           <img
-            src={`${process.env.REACT_APP_BACKEND_URL}/${props.keyImgSource}`}
+            src={`${process.env.REACT_APP_AWS_URL}/${props.keyImgSource}`}
             alt={props.commonName}
           />
           <h3>{props.commonName}</h3>

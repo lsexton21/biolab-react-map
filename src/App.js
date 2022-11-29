@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, Fragment } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import AuthContext from "./shared/context/auth-context";
 import { useHttpClient } from "./shared/hooks/http-hook";
 
@@ -15,9 +15,12 @@ import Layout from "./shared/Layout/Layout";
 import LoadingSpinner from "./shared/UI/LoadingSpinner";
 import UserSettings from "./users/components/UserSettings";
 import MySpecies from "./users/components/MySpecies";
+import Auth from "./users/pages/Auth";
+import Login from "./users/components/Login";
+import Register from "./users/components/Register";
 
 const App = () => {
-  const { sendRequest, isLoading } = useHttpClient();
+  const { sendRequest } = useHttpClient();
   const [speciesData, setSpeciesData] = useState();
   const [usersData, setUsersData] = useState();
   const authCtx = useContext(AuthContext);
@@ -48,8 +51,10 @@ const App = () => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
     if (storedData && storedData.token) {
       authCtx.login(storedData.userId, storedData.token);
+    } else {
+      <Navigate to="/" replace={true} />;
     }
-  }, [sendRequest]);
+  }, [sendRequest, authCtx]);
 
   return (
     <Fragment>
@@ -104,6 +109,10 @@ const App = () => {
               </Fragment>
             ) : (
               <Fragment>
+                <Route path="/auth" element={<Auth />}>
+                  <Route path="login" element={<Login />} />
+                  <Route path="register" element={<Register />} />
+                </Route>
                 <Route
                   path="/"
                   element={<Homepage speciesData={speciesData} />}

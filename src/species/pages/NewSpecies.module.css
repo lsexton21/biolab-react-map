@@ -1,15 +1,22 @@
 .species-form {
-  margin: 0 auto;
-  padding: 1rem;
-  width: 90%;
-  max-width: 40rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
+  margin: 1.2rem auto;
+  padding: 0.6rem;
+  width: 60rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.26);
+  border-radius: 0.4rem;
   background: white;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .species-form {
+    width: 95vw;
+    margin: 0;
+  }
 }
 
 .species-form > * {
-  padding: 10px;
+  padding: 0.6rem;
 }
 
 .mapPointer {

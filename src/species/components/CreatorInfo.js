@@ -5,7 +5,7 @@ const UserProfile = (props) => {
     <div className={styles.profile_container}>
       <div className={styles.profile_image}>
         <img
-          src={`${process.env.REACT_APP_BACKEND_URL}/${props.filteredUserData[0].profileImg}`}
+          src={`${process.env.REACT_APP_AWS_URL}/${props.filteredUserData[0].profileImg}`}
           alt="Profile Image"
         />
       </div>

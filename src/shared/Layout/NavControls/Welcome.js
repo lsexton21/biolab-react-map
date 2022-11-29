@@ -11,17 +11,17 @@ const Welcome = (props) => {
     <Fragment>
       <header className={styles["welcome-control"]}>
         <div className={styles["real-container"]}>
-          <h3 className={styles.real}>Real</h3>
-          <h3 className={styles["sub-real"]}>
-            <div className={styles.research}>Research</div>
-            <div className={styles.data}>Data</div>
-          </h3>
+          <h1 className={styles.real}>Real</h1>
+          <div className={styles["sub-real"]}>
+            <h1 className={styles.research}>Research</h1>
+            <h1 className={styles.data}>Data</h1>
+          </div>
         </div>
         <div className={styles["bioLab-and-nav-container"]}>
           <div className={styles["bioLab-container"]}>
-            <h3 className={styles.the}>The</h3>
-            <h3 className={styles.bioLab}>BioLab</h3>
-            <h3 className={styles.hthi}>at HTHI</h3>
+            <h2 className={styles.the}>The</h2>
+            <h1 className={styles.bioLab}>BioLab</h1>
+            <h2 className={styles.hthi}>at HTHI</h2>
           </div>
         </div>
         <div className={styles["guestMode-container"]}>

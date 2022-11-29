@@ -4,7 +4,8 @@
 }
 
 .locationBtn {
-  transform: scale(2);
+  height: 3rem;
+  width: 3rem;
 }
   
 .locationBtnContainer{
@@ -12,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  right: 5px;
+  margin: 2rem;
+  right: 0.5rem;
 }
 
 .lngLat {
@@ -21,15 +22,15 @@
 }
 
 .lngLat > * {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .lat, .lng {
-border-radius: 5px;
+border-radius: 0.5rem;
 }
 
 .form-control {
-  margin: 1rem 0;
+  margin: 0.1rem 0;
 }
 
 .form-control label,
@@ -47,7 +48,7 @@ border-radius: 5px;
 .form-control textarea {
   width: 100%;
   font: inherit;
-  border: 1px solid #ccc;
+  border: 0.1rem solid #ccc;
   background: #f8f8f8;
   padding: 0.15rem 0.25rem;
 }

@@ -37,7 +37,10 @@ const inputReducer = (state, action) => {
 
 const CoordinatesUpload = (props) => {
   const [coordinatesModal, setCoordinatesModal] = useState(false);
-  const [coordinatesValue, setCoordinatesValue] = useState({});
+  const [coordinatesValue, setCoordinatesValue] = useState({
+    lat: 32.733300574939676,
+    lng: -117.21914785687474,
+  });
 
   useEffect(() => {
     if (props.initialValue) {
@@ -133,9 +136,10 @@ const CoordinatesUpload = (props) => {
         <div className={styles.coordinatesControls}>
           <div className={styles.locationBtnContainer}>
             <Button
+              inverse
               style={{
-                height: "50px",
-                width: "50px",
+                height: "5rem",
+                width: "5rem",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",

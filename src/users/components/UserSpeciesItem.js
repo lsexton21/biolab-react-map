@@ -110,19 +110,28 @@ const UserSpeciesItem = (props) => {
         {speciesInfo ? (
           <div
             onClick={showSpeciesInfoHandler}
-            className={styles["species-item__info"]}
+            className={styles["species-item__infoContainer"]}
           >
-            <h2 style={{ borderBottom: "2px solid black", textAlign: "left" }}>
-              Observations:
-            </h2>
-            <p>{props.description}</p>
-            <Button onClick={toggleMapModal} inverse>
-              SEE LOCATION FOUND
-            </Button>
+            <div className={styles["species-item__info"]}>
+              <div className={styles["species-item__observationContainer"]}>
+                <h3>Observations:</h3>
+                <p>{props.description}</p>
+              </div>
+              <Button
+                style={{ marginBottom: "0.5rem" }}
+                secondary
+                onClick={toggleMapModal}
+              >
+                SEE LOCATION FOUND
+              </Button>
+            </div>
             <div className={styles["species-item__actions"]}>
               {isLoggedIn && (
                 <Fragment>
-                  <Link to={`${props.id}/edit`}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`${props.id}/edit`}
+                  >
                     <Button onClick={props.onEditModal}>EDIT</Button>
                   </Link>
                   <Button onClick={toggleDeleteModal} danger>
@@ -140,7 +149,7 @@ const UserSpeciesItem = (props) => {
             </div>
             <img
               className={styles["species-item__image"]}
-              src={`${process.env.REACT_APP_BACKEND_URL}/${props.img}`}
+              src={`${process.env.REACT_APP_AWS_URL}/${props.img}`}
               alt={props.commonName}
             />
             <div className={styles.taxaContainer}>

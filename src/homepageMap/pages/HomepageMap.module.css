@@ -14,14 +14,25 @@
   align-items: center;
 }
 
+@media (max-width: 480px) {
+  .speciesProfileAsideContainer {
+    justify-content: center;}
+}
+
 .speciesProfileAside {
   position: relative;
-  height: 360px;
-  width: 360px;
-  margin-right: 50px;
-  left: 400px;
+  max-width: 35rem;
+  margin-right: 5rem;
   opacity: 0;
   animation: 0.5s ease-in-out moveLeft forwards;
+}
+
+@media (max-width: 480px) {
+  .speciesProfileAside {
+    width: 90%;
+    margin-right: 0rem;
+    top: 10rem;
+  }
 }
 
 .map-container {
@@ -32,39 +43,40 @@
 .sidebar {
   background-color: #00000077;
   color: #fff;
-  padding: 6px 12px;
+  padding: 0.6rem 1.2rem;
   font-family: monospace;
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: bold;
   z-index: 1;
   position: absolute;
   top: 90%;
   left: 0;
-  margin: 12px;
-  border-radius: 4px;
+  margin: 1.2rem;
+  border-radius: 0.4rem;
 }
 
 .button {
   z-index: 1;
   position: absolute;
-  bottom: 100px;
+  bottom: 10rem;
 }
 
 .info {
   position: absolute;
-  top: 300px;
-  left: 700px;
+  top: 30rem;
+  left: 70rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100px;
+  width: 10rem;
 }
 
 .marker {
-  height: 70px;
-  width: 70px;
+  opacity: 0;
+  height: 7rem;
+  width: 7rem;
   display: flex;
-  bottom: 1000px;
+  bottom: 100rem;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -82,8 +94,8 @@
   background-color: white;
   position: relative;
   top: 50%;
-  height: 10px;
-  width: 35px;
+  height: 1rem;
+  width: 3.5rem;
   border-radius: 50%;
   transition: all .4s;
 }
@@ -119,15 +131,15 @@
 .marker-icon__hthi {
   width: 80%;
   height: 80%;
-  padding: 2px;
+  padding: 0.2rem;
   background-color: white;
   border-radius: 50%;
-  border: 2px solid blue;
+  border: 0.2rem solid blue;
 }
 
 .locationPin__hthi {
-  height: 60px;
-  width: 60px;
+  height: 6rem;
+  width: 6rem;
   color: white;
 }
 
@@ -135,38 +147,38 @@
 
 @media (min-width: 768px) {
   .sidebar {
-    font-size: 20px;
+    font-size: 2rem;
     top: 92%;
   }
 }
 
 @keyframes markerEntrance {
   from {
-    bottom: 1000px;
-    opacity: 0%;
+    bottom: 100rem;
+    opacity: 0;
   }
   to {
-    bottom: 0px;
-    opacity: 100%;
+    bottom: 0rem;
+    opacity: 1;
   }
 }
 
 @keyframes speciesProfileEntrance {
   from {
-    transform: translateX(400px);
+    transform: translateX(40rem);
   }
   to {
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
 }
 
 @keyframes moveLeft {
   from {
-    left: 400px;
+    left: 40rem;
     opacity: 0;
   }
   to {
-    left: 0px;
+    left: 0rem;
     opacity: 1;
   }
 }

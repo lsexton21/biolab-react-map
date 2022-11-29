@@ -1,27 +1,27 @@
 import { Fragment, useState } from "react";
-import { Outlet, useNavigate, useParams, NavLink } from "react-router-dom";
+import {
+  Outlet,
+  useNavigate,
+  useParams,
+  NavLink,
+  useOutletContext,
+} from "react-router-dom";
 import UserSpeciesItem from "./UserSpeciesItem";
 
 import styles from "./MySpecies.module.css";
 import LoadingSpinner from "../../shared/UI/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import ErrorModal from "../../shared/errors/ErrorModal";
-import Modal from "../../shared/UI/Modal";
 
 const MySpecies = (props) => {
   const { clearError, error, isLoading } = useHttpClient();
-  const [editModal, setEditModal] = useState(false);
+  const [editSpecies, setEditSpecies] = useState(false);
 
   let navigate = useNavigate();
   const userId = useParams().userId;
 
-  const editModalHandler = () => {
-    setEditModal(!editModal);
-  };
-
-  const cancelEditSpecies = () => {
-    setEditModal(false);
-    navigate(`/users/${userId}/myspecies`);
+  const editSpeciesHandler = () => {
+    setEditSpecies(!editSpecies);
   };
 
   const filteredSpeciesData = props.speciesData.filter(
@@ -35,6 +35,7 @@ const MySpecies = (props) => {
         <NavLink
           to={`/users/${userId}/newspecies`}
           className={styles.addSpeciesLink}
+          style={{ fontSize: "1.5rem" }}
         >
           + Add Species
         </NavLink>
@@ -46,17 +47,7 @@ const MySpecies = (props) => {
     <Fragment>
       <ErrorModal show={error} onClick={clearError} />
       {isLoading || (!props.speciesData && <LoadingSpinner />)}
-      {editModal && (
-        <Modal
-          background={"white"}
-          show={editModal}
-          onCancel={cancelEditSpecies}
-          onClick={editModalHandler}
-          header={"Edit Species"}
-        >
-          <Outlet />
-        </Modal>
-      )}
+      {editSpecies && <Outlet context={[editSpecies, setEditSpecies]} />}
       {!isLoading && filteredSpeciesData ? (
         <div className={styles["species-list"]}>
           {filteredSpeciesData.map((species) => (
@@ -69,7 +60,7 @@ const MySpecies = (props) => {
               description={species.description}
               coordinates={species.coordinates}
               taxa={species.taxa}
-              onEditModal={editModalHandler}
+              onEditModal={editSpeciesHandler}
             />
           ))}
         </div>

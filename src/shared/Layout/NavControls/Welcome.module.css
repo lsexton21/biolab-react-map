@@ -6,56 +6,67 @@
   justify-content: center;
   color: white;
   font-family: "Gochi Hand", cursive;
-  font-size: 30px;
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 0.1rem 0.1rem 1rem black;
   z-index: 1;
 }
 
 .real-container {
-  font-size: 90px;
+  font-size: 20rem;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 .real {
-  margin: 0px;
+  font-size: 10rem;
+  margin: 0;
   transform: rotateX(90deg);
-  animation: 6s ease-in moveRight;
+  animation: 5s ease-in moveRight;
 }
 
 .sub-real {
-  margin: 0px;
+  margin: 0;
   color: #9ae07f;
 }
 .research {
+  font-size: 10rem;
   position: relative;
-  bottom: 10px;
-  left: 30px;
-  margin: 0px;
+  bottom: 1rem;
+  left: 3rem;
   transform: rotateX(90deg);
-  animation: 3s ease-in-out forwards moveUp ;
+  animation: 2.5s ease-in-out forwards moveUp ;
+}
+
+@media (max-width:480px) {
+  .research {
+    bottom: 7.5;
+  }
 }
 .data {
+  font-size: 10rem;
   position: relative;
-  bottom: 130px;
-  left: 30px;
-  margin: 0px;
+  bottom: 12.5rem;
+  left: 3.5rem;
   transform: rotateX(90deg);
-  animation: 3s ease-in-out 3s rotateUpAndDown; 
+  animation: 2.5s ease-in-out 2.5s rotateUpAndDown; 
+}
+@media (max-width:480px) {
+  .data {
+    bottom: 25.5rem;
+  }
 }
 .bioLab-and-nav-container {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px;
+  margin: 0;
   width: 100%;
 }
 .bioLab-container {
-  font-size: 90px;
+  font-size: 9rem;
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -64,68 +75,87 @@
 
 .the {
   position: relative;
-  margin: 0px;
-  font-size: 60px;
+  margin: 0;
+  font-size: 5rem;
   transform: rotateX(90deg);
   color: #9ae07f;
-  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+  animation: 0.5s openingBioLab ease-in-out 5s forwards;
+}
+
+@media (max-width: 1000px) {
+  .the {
+    font-size: 4rem;
+  }
 }
 
 .bioLab {
-  margin: 0px 30px;
   position: relative;
+  top: 2.5rem;
   transform: rotateX(90deg);
-  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+  animation: 0.5s openingBioLab ease-in-out 5s forwards;
 }
+@media (max-width: 1000px) {
+  .bioLab {
+    bottom: 1.5rem;
+  }
+}
+
 .hthi {
   position: relative;
-  top: 50px;
-  right: 10px;
-  margin: 0px;
-  font-size: 60px;
+  top: 8rem;
+  right: 1rem;
+  margin: 0rem;
+  font-size: 5rem;
   transform: rotateX(90deg);
   color: #9ae07f;
-  animation: 0.5s openingBioLab ease-in-out 6s forwards;
+  animation: 0.5s openingBioLab ease-in-out 5s forwards;
+}
+
+@media (max-width: 1000px) {
+  .hthi {
+    font-size: 4rem;
+    top: 7rem;
+  }
 }
 
 .guestMode-container {
   position: relative;
   display: flex;
   align-items: flex-start;
-  right: 100px;
+  right: 10rem;
   transform: rotateX(90deg);
-  animation: 0.5s ease-in rotateUp 6s forwards;
+  animation: 0.5s ease-in rotateUp 5s forwards;
 }
 
 .directions {
-  padding: 0px;
+  padding: 0rem;
   font-family: "Gochi Hand", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26px;
-  width: 300px;
-  height: 80px;
+  font-size: 2.6rem;
+  width: 30rem;
+  height: 8rem;
   position: relative;
-  margin-right: 50px;
-  margin-top: 10px;
+  margin-right: 5rem;
+  margin-top: 1rem;
   text-shadow: none;
 }
 
 .login {
-  padding: 10px;
+  padding: 1rem;
   color: white;
   font-family: "Gochi Hand", cursive;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 26px;
-  width: 120px;
-  height: 80px;
-  margin-top: 10px;
+  font-size: 2.6rem;
+  width: 12rem;
+  height: 8rem;
+  margin-top: 1rem;
   border-radius: 5%;
-  border: 2px solid white;
+  border: 0.2rem solid white;
   background-color: transparent;
 }
 
@@ -138,38 +168,38 @@
 @keyframes moveRight {
   0% {
     opacity: 0;
-    transform: translateX(-500px);
+    transform: translateX(-50rem);
   }
-  10% {
+  15% {
     opacity: 1;
-    transform: translateX(20px);
+    transform: translateX(1rem);
   }
-  12% {
+  18% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
   95% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
   100% {
     opacity: 0;
-    transform: translateX(-500px);
+    transform: translateX(-50rem);
   }
 }
 
 @keyframes moveUp {
   0% {
     opacity: 0;
-    transform: translateY(800px);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(-20px);
+    transform: translateY(100rem);
   }
   30% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(-1rem);
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(0rem);
   }
   95% {
     opacity: 1;
@@ -221,28 +251,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 1;
-  top: 150px;
-  text-shadow: 1px 1px 10px black;
+  top: 10rem;
+
+}
+
+.back {
+  position: relative;
+  left: 79rem;
+  top: 4rem;
+  height: 6rem;
+  width: 6rem;
+  background-color: white;
+  border: 0.5rem solid #007da7;
+  color: #007da7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: none;
+  font-family: "Gochi Hand", cursive;
+  animation: moveLeft 0.5s ease-in-out forwards;
 }
 
 .auth, .continue {
   font-family: cursive; 
   color: white;
-  font-size: 40px;
+  font-size: 4rem;
   font-family: "Gochi Hand", cursive;
   transition: .3s;
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 0.1rem 0.1rem 1rem black;
 }
 
 .auth:hover, .continue:hover {
-  font-size: 45px;
+  font-size: 4.5rem;
   cursor: pointer;
 }
 
 .continue {
-  margin-top: 50px;
+  margin-top: 5rem;
   cursor: pointer;
 }
 
@@ -254,5 +306,18 @@
     100% {
       opacity: 1;
       transform: rotateX(0deg);
+    }
+  }
+
+  @keyframes moveLeft {
+    0% {
+      left: 120rem;
+    }
+    
+    85% {
+      left: 18rem;
+    }
+    100% {
+      left: 20rem;
     }
   }

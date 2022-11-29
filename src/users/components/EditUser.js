@@ -122,9 +122,6 @@ const EditUser = (props) => {
       <ErrorModal error={error} onClick={clearError} />
       {!isLoading && loadedUser ? (
         <form className={styles["edit-form"]} onSubmit={editUserSubmitHandler}>
-          <div className={styles.back} onClick={props.onShowAuth}>
-            Back
-          </div>
           <div className={styles.header}>Student Registration</div>
           <Input
             id="firstName"

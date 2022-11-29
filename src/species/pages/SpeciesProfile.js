@@ -1,15 +1,16 @@
 import { Fragment, useState } from "react";
 import styles from "./SpeciesProfile.module.css";
 
-import { useParams } from "react-router-dom";
+import { useParams, Link, useOutletContext } from "react-router-dom";
 import LoadingSpinner from "../../shared/UI/LoadingSpinner";
 
 import CreatorInfo from "../components/CreatorInfo";
-import { faTasks } from "@fortawesome/free-solid-svg-icons";
+
 import { useEffect } from "react";
 
 const SpeciesProfile = (props) => {
   const [bumpSpecies, setBumpSpecies] = useState(false);
+  const [showSpeciesContainer, setShowSpeciesContainer] = useOutletContext();
   const params = useParams();
 
   let filteredSpeciesData;
@@ -47,29 +48,40 @@ const SpeciesProfile = (props) => {
           }`}
         >
           <div className={styles.speciesImgContainer}>
+            <Link
+              to={`/`}
+              onClick={() => {
+                setShowSpeciesContainer(false);
+              }}
+              className={styles.speciesProfileCancel}
+            >
+              X
+            </Link>
             <img
-              src={`${process.env.REACT_APP_BACKEND_URL}/${filteredSpeciesData[0].imgs.keyImg.source}`}
+              src={`${process.env.REACT_APP_AWS_URL}/${filteredSpeciesData[0].imgs.keyImg.source}`}
               alt={filteredSpeciesData[0].commonName}
               className={styles.speciesImg}
             />
           </div>
-          <div className={styles.speciesNamesContainer}>
-            <div className={styles.speciesCommonName}>
-              {filteredSpeciesData[0].commonName}
+          <div className={styles.speciesInfoContainer}>
+            <div className={styles.speciesNamesContainer}>
+              <div className={styles.speciesCommonName}>
+                {filteredSpeciesData[0].commonName}
+              </div>
+              <div className={styles.speciesNamesDivider} />
+              <div className={styles.speciesScientificName}>
+                {filteredSpeciesData[0].scientificName}
+              </div>
             </div>
-            <div className={styles.speciesNamesDivider} />
-            <div className={styles.speciesScientificName}>
-              {filteredSpeciesData[0].scientificName}
+            <div className={styles.control_body__observations}>
+              <h3>Observations:</h3>
+              <p>{filteredSpeciesData[0].description}</p>
             </div>
-          </div>
-          <div className={styles.control_body__observations}>
-            <span>Observations:</span>
-            <p>{filteredSpeciesData[0].description}</p>
-          </div>
-          <div className={styles.userProfileContainer}>
-            <span>Sample prepared and photographed by:</span>
-            <div className={styles.userProfiles}>
-              <CreatorInfo filteredUserData={filteredUserData} />
+            <div className={styles.userProfileContainer}>
+              <span>Sample prepared and photographed by:</span>
+              <div className={styles.userProfiles}>
+                <CreatorInfo filteredUserData={filteredUserData} />
+              </div>
             </div>
           </div>
         </div>

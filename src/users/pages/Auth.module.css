@@ -1,86 +1,45 @@
 .authContainer {
   left: 100%;
   position: relative;
-  bottom: 150px;
+  left: 100rem;
+  top: 7rem;
+  
 }
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-  margin: 0 auto;
-  padding: 1rem;
-  width: 30rem;
-  font-size: 16px;
-  color: black;
-  background-color: rgba(256, 256, 256,.95);
-  text-shadow: none;
-  border-radius: 5px;
-}
+
 .auth-moveIn {
-  animation: moveLeft 0.5s ease-in-out 0.5s forwards;
+  animation: moveLeft 0.5s ease-in-out forwards;
 }
 
 .auth-moveOut {
   animation: moveRight 0.5s ease-in-out forwards;
 }
 
-.auth-form input {
-  width: 20rem;
-}
-
-.header {
-  color: #007EA7;
-  font-size: 30px;
-  font-family: "Gochi Hand", cursive;
-  text-shadow: 1px 1px 1px black;
-}
-.back {
-  margin: 0px;
-  position: relative;
-  width: 100%;
-  text-align: right;
-  cursor: pointer;
-}
-
-.auth-form button {
-  margin: 0.5rem;
-}
-
-.card {
-  padding: 1rem;
-  min-width: 25rem;
-}
-
-.pagination {
-  font-size: 25px;
-  font-family: "Gochi Hand", cursive;
-  color: #007EA7;
-  cursor: pointer;
-}
-
 @keyframes moveLeft {
   0% {
-    left: 100%
+    opacity: 0;
+    left: 100rem;
   }
   
   85% {
-    left: -10%;
+    opacity: 1;
+    left: -2rem;
   }
   100% {
-    left: 0;
+    left: 0rem;
   }
 }
 
 @keyframes moveRight {
   from {
-    left: 0%
+    opacity: 1;
+    left: 0rem;
   }
   
   15% {
-    left: -10%;
+    left: -2rem;
   }
   100% {
-    left: 100%;
+    opacity: 0;
+    left: 100rem;
   }
 }
