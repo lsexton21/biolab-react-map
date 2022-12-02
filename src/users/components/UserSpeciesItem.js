@@ -6,7 +6,7 @@ import Button from "../../shared/form-elements/Button";
 import MapBox from "../../shared/UI/MapBox";
 import AuthContext from "../../shared/context/auth-context";
 import WarningModal from "../../shared/UI/WarningModal";
-import FormModal from "../../shared/UI/FormModal";
+import Modal from "../../shared/UI/Modal";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const UserSpeciesItem = (props) => {
@@ -67,40 +67,41 @@ const UserSpeciesItem = (props) => {
         <WarningModal
           show={toggleDeleteModal}
           onClick={toggleDeleteModal}
+          onCancel={toggleDeleteModal}
           header="Are you sure?"
-          headerClass={styles["species-item__modal-header"]}
-          contentClass={styles["species-item__modal-content"]}
-          footerClass={styles["species-item__modal-actions"]}
         >
           <div>
-            <p>
+            <h3>
               Are you sure you want to delete your {props.commonName} entry?
               Warning! You can not undo this action.
-            </p>
-            <Fragment>
-              <Button inverse onClick={toggleDeleteModal}>
-                CANCEL
-              </Button>
+            </h3>
+            <footer
+              style={{
+                marginTop: "2rem",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Button danger onClick={deleteSpeciesHandler}>
                 DELETE
               </Button>
-            </Fragment>
+            </footer>
           </div>
         </WarningModal>
       )}
       {mapModal && (
-        <FormModal
-          show={toggleMapModal}
+        <Modal
+          background={"solidWhite"}
+          onCancel={toggleMapModal}
+          show={mapModal}
           onClick={toggleMapModal}
           header={props.commonName}
-          contentClass={styles["species-item__modal-content"]}
-          footerClass={styles["species-item__modal-actions"]}
-          footer={<Button onClick={toggleMapModal}>Close</Button>}
         >
           <div className={styles["moreInfo-container"]}>
             <MapBox center={props.coordinates} zoom={17} />
           </div>
-        </FormModal>
+        </Modal>
       )}
       <li
         onClick={showSpeciesInfoHandler}

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, Fragment } from "react";
 import { Map, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import styles from "./MapPointer.module.css";
@@ -44,7 +44,7 @@ const MapPointer = (props) => {
   };
 
   return (
-    <div className={styles.main}>
+    <Fragment>
       <div className={styles["map-container"]}>
         <Map
           ref={mapRef}
@@ -68,7 +68,7 @@ const MapPointer = (props) => {
       <div className={styles.footer}>
         <Button onClick={props.onSelect}>OK</Button>
       </div>
-    </div>
+    </Fragment>
   );
 };
 export default MapPointer;

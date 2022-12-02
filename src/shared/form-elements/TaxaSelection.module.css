@@ -1,7 +1,9 @@
 .taxaContainer {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     align-items: center;
     border: none;
     background: transparent;
@@ -13,7 +15,6 @@
     display: none;
 }
 .label {
-    margin: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
     transition: 0.1s;

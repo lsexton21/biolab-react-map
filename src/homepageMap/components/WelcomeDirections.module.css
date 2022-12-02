@@ -5,8 +5,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    height: 26rem;
-    width: 56rem;
     background-color: rgba(255, 255, 255, 0.86);
     box-shadow: 0 0 2rem black;
     padding: 1rem;
@@ -24,9 +22,9 @@
 }
   
 .welcomeTextContainer {
-    margin-left: 14rem;
-    width: 35rem;
-    height: 100%;
+    margin-right: 20rem;
+    margin-left: 15rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +32,13 @@
     font-family: "Gochi Hand", cursive;
     font-size: 3rem;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .welcomeTextContainer {
+        margin-left: 5rem;
+        margin-right: 0;
+    }
 }
   
 .welcomeTitle {

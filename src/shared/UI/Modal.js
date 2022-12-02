@@ -7,16 +7,18 @@ const ModalOverlay = (props) => {
   const [showHeader, setShowHeader] = useState(true);
 
   return ReactDOM.createPortal(
-    <div className={styles.modal} style={props.style}>
-      {!props.hideHeader && (
-        <header className={styles.header}>
-          <div>{props.header}</div>
-          <button className={styles.button} onClick={props.onCancel}>
-            Cancel
-          </button>
-        </header>
-      )}
-      <div className={styles.body}>{props.children}</div>
+    <div className={styles.modalContainer}>
+      <div className={styles.modal} style={props.style}>
+        {!props.hideHeader && (
+          <header className={styles.header}>
+            <div>{props.header}</div>
+            <button className={styles.button} onClick={props.onCancel}>
+              X
+            </button>
+          </header>
+        )}
+        <div className={styles.body}>{props.children}</div>
+      </div>
     </div>,
     document.getElementById("modalOverlay")
   );
@@ -27,7 +29,11 @@ const Modal = (props) => {
     <Fragment>
       {props.show && (
         <Fragment>
-          <Backdrop onClick={props.onCancel} background={props.background} />
+          <Backdrop
+            show={props.show}
+            onClick={props.onCancel}
+            background={props.background}
+          />
           <ModalOverlay
             header={props.header}
             style={props.style}

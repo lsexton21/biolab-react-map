@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Button from "../form-elements/Button";
 import ReactDOM from "react-dom";
+import Backdrop from "../UI/Backdrop";
 
 import styles from "./ErrorModal.module.css";
 import FadeInOut from "../UI/CSSTransitions/FadeInOut.module.css";
@@ -15,7 +16,7 @@ const ErrorBackdrop = (props) => {
       mountOnEnter
       unmountOnExit
     >
-      <div className={styles.backdrop} onClick={props.onClick}>
+      <div className={styles.errorBackdrop} onClick={props.onClick}>
         {props.children}
       </div>
     </CSSTransition>,
@@ -25,21 +26,19 @@ const ErrorBackdrop = (props) => {
 
 const ErrorModalOverlay = (props) => {
   return ReactDOM.createPortal(
-    <div className={`modal ${styles.modal}`} style={props.style}>
-      <header className={`modal__header ${props.headerClass}`}>
+    <div className={styles.errorModal} style={props.style}>
+      <header className={styles.errorModal__header}>
         <h2>An Error Occured!</h2>
+        <button className={styles.errorModal__button} onClick={props.onClick}>
+          X
+        </button>
       </header>
       <form
         onSubmit={
           props.onClick ? props.onClick : (event) => event.preventDefault()
         }
       >
-        <h4 className={`modal__content ${props.contentClass}`}>
-          {props.error}
-        </h4>
-        <footer className={`modal__footer ${props.footerClass}`}>
-          <Button>Okay</Button>
-        </footer>
+        <h3 className={styles.errorModal__content}>{props.error}</h3>
       </form>
     </div>,
     document.getElementById("errorModalOverlay")
@@ -49,11 +48,22 @@ const ErrorModalOverlay = (props) => {
 const ErrorModal = (props) => {
   return (
     <Fragment>
-      {!!props.error && (
-        <ErrorBackdrop show={!!props.error}>
-          <ErrorModalOverlay error={props.error} onClick={props.onClick} />
-        </ErrorBackdrop>
+      {props.error && (
+        <ErrorBackdrop
+          background="black"
+          show={props.error}
+          onClick={props.onClick}
+        />
       )}
+      <CSSTransition
+        in={props.error}
+        mountOnEnter
+        unmountOnExit
+        timeout={200}
+        classNames="modal"
+      >
+        <ErrorModalOverlay error={props.error} onClick={props.onClick} />
+      </CSSTransition>
     </Fragment>
   );
 };

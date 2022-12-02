@@ -34,7 +34,6 @@
   padding: 1rem;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
 }
 
 .species-item__info {
@@ -133,20 +132,7 @@
   transition: 1s;
 }
 
-.species-item__modal-content {
-  padding: 0;
-}
 
-.species-item__modal-actions {
-  text-align: right;
-  padding: 0.6rem;
-}
-.species-item__modal-header {
-  width: 100%;
-  padding: 0.6rem 0.3rem;
-  background: #2a006e;
-  color: white;
-}
 
 .species-item__actions button {
   margin-left: 1rem;
@@ -157,8 +143,10 @@
 }
 
 .moreInfo-container {
-  height: 1.5rem;
-  width: 100%;
+  height: 90vh;
+  width: 95vw;
+  max-height: 50rem;
+  max-width: 100rem;
 }
 
 .taxaContainer {

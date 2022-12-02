@@ -14,7 +14,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MapPointer from "../../shared/form-elements/MapPointer";
-import ModalOnModal from "../../shared/UI/ModalOnModal";
+import Modal from "../../shared/UI/Modal";
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -117,7 +117,7 @@ const CoordinatesUpload = (props) => {
   return (
     <Fragment>
       {coordinatesModal && (
-        <ModalOnModal
+        <Modal
           background={"white"}
           show={coordinatesModal}
           onClick={closeCoordinatesModalHandler}
@@ -129,7 +129,7 @@ const CoordinatesUpload = (props) => {
             onSelect={closeCoordinatesModalHandler}
             initialValue={coordinatesValue}
           />
-        </ModalOnModal>
+        </Modal>
       )}
       <div className={styles.coordinates}>
         <div style={{ fontWeight: "bold" }}>{props.label}</div>

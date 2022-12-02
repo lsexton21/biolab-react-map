@@ -1,15 +1,8 @@
-.main {
-    border-radius: 0.5rem;
-    background-color: white;
-    height: 100%;
-    width: 100%;
-    box-shadow: 0.2rem 0.2rem 0.5rem black;
-}
-
 .map-container {
-    width: 100%;
-    height: 90%;
-    padding: 1rem;
+    width: 95vw;
+    height: 100vh;
+    max-width: 100rem;
+    max-height: 60rem;
 }
   
 .marker {
@@ -22,18 +15,4 @@
     justify-content:center;
     width: 100%;
     padding: 1rem;
-}
-
-@media (min-width: 800px) {
-    .main {
-      height: 70rem;
-      border-radius: 0.5rem;
-    }
-}
-
-@media (min-width: 800px) {
-    .map-container {
-        width: 80rem;
-        height: 60rem;
-    }
 }

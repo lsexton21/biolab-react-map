@@ -1,4 +1,4 @@
-.backdrop {
+.errorBackdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,8 +11,68 @@
     background-color:rgba(0,0,0, 0.636)
 }
 
-.modal {
+.errorModal {
+  z-index: 100;
+    position: fixed;
+    top: 22vh;
+    left: 10%;
+    width: 80%;
+    min-width: 40rem;
+    border: 0.25rem solid black;
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 5rem;
+    overflow: hidden;
     animation: moveDown 0.3s ease-in-out forwards;
+}
+
+.errorModal__header {
+  width: 100%;
+  padding: .5rem;
+  padding-left: 1rem;
+  background: #ff0055;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.errorModal__header h2 {
+  margin: 0.3rem;
+}
+
+.errorModal__content {
+  background: white;
+  padding: 2rem;
+}
+
+.errorModal__button {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    background-color: white;
+    border: 0.5rem solid black;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Gochi Hand", cursive;
+}
+
+.errorModal__footer {
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .errorModal {
+    left: calc(50% - 12rem);
+    width: 24rem;
+  }
 }
 
 @keyframes moveDown {

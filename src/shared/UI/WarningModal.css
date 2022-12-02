@@ -1,60 +1,75 @@
+.modalContainer {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
 .modal {
-    z-index: 100;
-    position: fixed;
-    top: 22vh;
-    left: 10%;
-    width: 80%;
-    background: white;
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.26);
-    border-radius: 0.8rem;
-    min-width: 40rem;
-  }
+  position: relative;
+  top: 22vh;
+  min-width: 40rem;
+  border: 0.25rem solid black;
+  border-radius: 2rem;
+  box-shadow: 1rem 1rem 5rem;
+  overflow: hidden;
+  animation: moveDown 0.3s ease-in-out forwards;
+}
   
-  .modal__header {
-    width: 100%;
-    padding: .5rem;
-    padding-left: 1rem;
-    background: #ff0055;
-    color: white;
-  }
+.modal__header {
+  width: 100%;
+  padding: .5rem;
+  padding-left: 1rem;
+  background: #ff0055;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
   
-  .modal__header h2 {
-    margin: 0.3rem;
-  }
-  
-  .modal__content {
-    padding: 1rem;
-  }
-  
-  .modal__footer {
-    padding: 0.6rem 0.3rem;
-  }
+.modal__header h2 {
+  margin: 0.3rem;
+}
+
+.modal__content {
+  background: white;
+  padding: 2rem;
+}
+
+.modal__button {
+  position: relative;
+  height: 6rem;
+  width: 6rem;
+  background-color: white;
+  border: 0.5rem solid black;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Gochi Hand", cursive;
+}
   
   @media (min-width: 768px) {
     .modal {
-      left: calc(50% - 12rem);
-      width: 24rem;
+      max-width: 24rem;
     }
   }
-  
-  .modal-enter {
-    transform: translateY(-6rem);
-    opacity: 0;
-  }
-  
-  .modal-enter-active {
-    transform: translateY(0);
-    opacity: 1;
-    transition: all 200ms;
-  }
-  
-  .modal-exit {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .modal-exit-active {
-    transform: translateY(-6rem);
-    opacity: 0;
-    transition: all 200ms;
-  }
+
+  @keyframes moveDown {
+    from {
+      opacity:0;
+      transform:translateY(-6rem)
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0rem)
+    }
+    }

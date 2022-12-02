@@ -49,21 +49,27 @@ const UserSettings = (props) => {
         <WarningModal
           show={deleteModal}
           onSubmit={deleteUserHandler}
+          onCancel={toggleDeleteModalHandler}
+          onClick={toggleDeleteModalHandler}
           header="DELETE YOUR PROFILE?"
         >
           <div>
-            <p>
+            <h3>
               Are you sure you want to delete your profile? Warning! You can not
               undo this action.
-            </p>
-            <Fragment>
-              <Button inverse onClick={toggleDeleteModalHandler}>
-                CANCEL
-              </Button>
+            </h3>
+            <footer
+              style={{
+                marginTop: "2rem",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Button danger onClick={deleteUserHandler}>
                 DELETE
               </Button>
-            </Fragment>
+            </footer>
           </div>
         </WarningModal>
       )}

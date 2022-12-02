@@ -11,7 +11,10 @@
   }
   .modal {
     max-width: 100rem;
-    max-height: 100vh;
+    border: 0.25rem solid black;
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 5rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,8 +38,6 @@
   
   .button {
   position: relative;
-  bottom: 3rem;
-  left: 3rem;
   height: 6rem;
   width: 6rem;
   background-color: white;

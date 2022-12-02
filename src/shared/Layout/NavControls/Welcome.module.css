@@ -11,7 +11,6 @@
 }
 
 .real-container {
-  font-size: 20rem;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -20,11 +19,25 @@
   padding-top: 1rem;
 }
 .real {
+  position: relative;
   font-size: 10rem;
   margin: 0;
   transform: rotateX(90deg);
   animation: 5s ease-in moveRight;
 }
+
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 3) {.real {
+  font-size: 6rem;
+  top: 3rem;
+}} 
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 2) {.real {
+  font-size: 6rem;
+  top: 3rem;
+}}
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 1) {.real {
+  font-size: 6rem;
+  top: 3rem;
+}}
 
 .sub-real {
   margin: 0;
@@ -41,7 +54,9 @@
 
 @media (max-width:480px) {
   .research {
-    bottom: 7.5;
+    top: 2.5rem;
+    left: 2rem;
+    font-size: 6rem;
   }
 }
 .data {
@@ -54,22 +69,22 @@
 }
 @media (max-width:480px) {
   .data {
-    bottom: 25.5rem;
+    bottom: 4.5rem;
+    left: 2rem;
+    font-size: 6rem;
   }
 }
 .bioLab-and-nav-container {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
+  justify-content: space-between;
   width: 100%;
 }
 .bioLab-container {
   font-size: 9rem;
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -96,7 +111,8 @@
 }
 @media (max-width: 1000px) {
   .bioLab {
-    bottom: 1.5rem;
+    top: 3rem;
+    right: 2rem;
   }
 }
 
@@ -114,7 +130,7 @@
 @media (max-width: 1000px) {
   .hthi {
     font-size: 4rem;
-    top: 7rem;
+    right: 10rem;
   }
 }
 
@@ -126,6 +142,16 @@
   transform: rotateX(90deg);
   animation: 0.5s ease-in rotateUp 5s forwards;
 }
+
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 3) {.guestMode-container {
+  right: 5rem;
+}} 
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 2) {.guestMode-container {
+  right: 5rem;
+}}
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 1) {.guestMode-container {
+  right: 5rem;
+}}
 
 .directions {
   padding: 0rem;

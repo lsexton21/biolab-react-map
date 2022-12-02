@@ -23,11 +23,11 @@ const Welcome = (props) => {
             <h1 className={styles.bioLab}>BioLab</h1>
             <h2 className={styles.hthi}>at HTHI</h2>
           </div>
-        </div>
-        <div className={styles["guestMode-container"]}>
-          <button className={styles.login} onClick={props.onShowAuth}>
-            Student Login
-          </button>
+          <div className={styles["guestMode-container"]}>
+            <button className={styles.login} onClick={props.onShowAuth}>
+              Student Login
+            </button>
+          </div>
         </div>
       </header>
       {props.showAuth && (
