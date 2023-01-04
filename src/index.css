@@ -19,13 +19,12 @@ code {
 
 html {
   height: 100%;
-  font-size: 62.5%;
-  
+  font-size: 10px;
 }
 
-@media (max-width: 1300px) {html {font-size: 62.5%;}} /*tablet-landscape*/
-@media (max-width: 1000px) {html {font-size: 50%;}} /*tablet-portrait*/
-@media (min-width: 1500px) {html {font-size: 62.5%;}} /*desktop*/
+@media (max-width: 1300px) {html {font-size: 9px;}} /*tablet-landscape*/
+@media (max-width: 1000px) {html {font-size: 8px;}} /*tablet-portrait*/
+@media (max-width: 490px) and (-webkit-max-device-pixel-ratio: 4) {html {font-size: 7px;}} /*tablet-portrait and phone*/
 
 .centered {
   margin: 0.6rem auto;
@@ -37,25 +36,27 @@ html {
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.4em;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 1.8em;
+  font-weight: 400;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3em;
+  font-weight: 400;
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 8em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 400;
 }
 
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 6rem;
-  }
-}
+
 
 

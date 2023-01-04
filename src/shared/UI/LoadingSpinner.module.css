@@ -7,7 +7,16 @@
   align-items: center;
 }
 
+.loadingTitle {
+  font-family: "Gochi Hand", cursive;
+  color: #007da7dd;
+  text-shadow: 0.1rem 0.1rem 0.1rem black;
+  font-size: 3rem;
+  padding: 1rem;
+}
+
 .spinner {
+  margin-top: 2rem;
   display: inline-block;
   width: 8rem;
   height: 8rem;

@@ -12,6 +12,7 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 const UserSpeciesItem = (props) => {
   const [mapModal, setMapModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [speciesInfo, setSpeciesInfo] = useState(false);
   const navigate = useNavigate();
   const userId = useParams().userId;
   const { sendRequest, clearError, isLoading, error } = useHttpClient();
@@ -25,8 +26,6 @@ const UserSpeciesItem = (props) => {
     day: "numeric",
     year: "numeric",
   };
-
-  const [speciesInfo, setSpeciesInfo] = useState(false);
 
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
@@ -54,11 +53,7 @@ const UserSpeciesItem = (props) => {
   };
 
   const showSpeciesInfoHandler = () => {
-    setSpeciesInfo(true);
-  };
-
-  const hideSpeciesInfoHandler = () => {
-    setSpeciesInfo(false);
+    setSpeciesInfo(!speciesInfo);
   };
 
   return (
@@ -103,18 +98,19 @@ const UserSpeciesItem = (props) => {
           </div>
         </Modal>
       )}
-      <li
-        onClick={showSpeciesInfoHandler}
-        onMouseLeave={hideSpeciesInfoHandler}
-        className={styles["species-item"]}
-      >
+      <li onClick={showSpeciesInfoHandler} className={styles["species-item"]}>
         {speciesInfo ? (
-          <div
-            onClick={showSpeciesInfoHandler}
-            className={styles["species-item__infoContainer"]}
-          >
+          <div className={styles["species-item__infoContainer"]}>
             <div className={styles["species-item__info"]}>
               <div className={styles["species-item__observationContainer"]}>
+                <div className={styles.backButtonContainer}>
+                  <button
+                    className={styles.backButton}
+                    onClick={showSpeciesInfoHandler}
+                  >
+                    X
+                  </button>
+                </div>
                 <h3>Observations:</h3>
                 <p>{props.description}</p>
               </div>

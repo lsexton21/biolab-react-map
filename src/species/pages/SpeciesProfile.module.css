@@ -2,12 +2,21 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  top: 5rem;
+  margin-right: 5rem;
+  margin-top: 20rem;
+}
+
+
+@media (max-width: 1200px) {
+  .speciesProfileContainer {
+margin-right: 5rem;
+margin-top: 10rem}
 }
 
 @media (max-width: 480px) {
   .speciesProfileContainer {
-  top: -8rem;}
+margin-right: 0;
+margin-top: 0rem}
 }
 
 .bumpSpecies {
@@ -22,11 +31,11 @@
 }
 
 .speciesImg {
-  width: 90%;
+  width: 80%;
   aspect-ratio: 1 / 1;
   border-radius: 10%;
   position: relative;
-  border: 0.5rem solid white;
+  border: 0.3rem solid white;
   background-color: white;
   box-shadow: 0.3rem 0.3rem 0.5rem black;
   object-fit: cover;
@@ -34,7 +43,7 @@
 
 .speciesProfileCancel {
   position: relative;
-  left: calc(100% - 6rem);
+  left: calc(100% - 8rem);
   top: 3rem;
   height: 6rem;
   width: 6rem;
@@ -71,7 +80,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 6rem;
+  height: 5vh;
   margin-top: 1.5rem;
 }
 
@@ -79,7 +88,6 @@
   font-family: "Gochi Hand", cursive;
   color: #9ae07fe1;
   text-shadow: 0.1rem 0.1rem 0.1rem black;
-  font-size: 2.5rem;
   width: 90%;
   text-align: center;
   position: relative;
@@ -104,7 +112,7 @@
 }
 
 .control_body__observations {
-  max-height: 20rem;
+  max-height: 14vh;
   width: 100%;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -120,7 +128,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 14rem;
 }
 
 .userProfiles {

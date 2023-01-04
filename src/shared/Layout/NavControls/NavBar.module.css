@@ -1,13 +1,15 @@
 .navBarHeader {
     width: 100%;
     background-color: #007da7dd;
-    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
-    height: 18rem;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+    height: 23vh;
     display: flex;
-    justify-content:space-between;
     position: absolute;
     z-index: 2;
-    padding: 2rem 3rem;
+}
+@media (max-width: 1000px) and (-webkit-max-device-pixel-ratio: 4) {.navBarHeader {
+    height: 18vh;
+}
 }
 
 .openBackground {
@@ -15,7 +17,7 @@
 }
 
 .fixedBackground {
-    animation: 5s ease-in-out forwards fixedBackground infinite;
+    animation: 4s ease-in-out forwards fixedBackground infinite;
 }
 
 .openBackgroundImmediately {
@@ -23,19 +25,25 @@
 }
 
 .closeBackground {
-    animation: 1s ease-out forwards closeBackground;
+    animation: 0.8s ease-out forwards closeBackground;
 }
+
+@media (max-width: 1000px) and (-webkit-max-device-pixel-ratio: 4) {.closeBackground {
+    animation: 1s ease-out forwards closeBackgroundSmallScreens;
+}
+}
+
 
 @keyframes fixedBackground {
     0% {
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 
     50% {
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 90%)
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 90%)
     }
     100% {
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 }
 
@@ -57,16 +65,35 @@
   
 @keyframes closeBackground {
     0% {
-        height: 80rem;
+        height: 80vh;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 
-    15% {
-        height: 82rem;
+    85% {
+        height: 22vh;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
+
     100% {
-        height: 18rem;
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%)
+        height: 23vh;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
     }
 }
+
+@keyframes closeBackgroundSmallScreens {
+    0% {
+        height: 80vh;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+
+    85% {
+        height: 17vh;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+
+    100% {
+        height: 18vh;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)
+    }
+}
+

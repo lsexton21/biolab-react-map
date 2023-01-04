@@ -69,16 +69,16 @@ const SpeciesProfile = (props) => {
           </div>
           <div className={styles.speciesInfoContainer}>
             <div className={styles.speciesNamesContainer}>
-              <div className={styles.speciesCommonName}>
+              <h3 className={styles.speciesCommonName}>
                 {filteredSpeciesData[0].commonName}
-              </div>
+              </h3>
               <div className={styles.speciesNamesDivider} />
-              <div className={styles.speciesScientificName}>
+              <h3 className={styles.speciesScientificName}>
                 {filteredSpeciesData[0].scientificName}
-              </div>
+              </h3>
             </div>
             <div className={styles.control_body__observations}>
-              <h3>Observations:</h3>
+              <h4>Observations:</h4>
               <p>{filteredSpeciesData[0].description}</p>
             </div>
             <div className={styles.userProfileContainer}>

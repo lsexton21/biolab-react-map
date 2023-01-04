@@ -86,7 +86,7 @@ const NewSpecies = (props) => {
     <Fragment>
       <ErrorModal error={error} onClick={clearError} />
       <form className={styles["species-form"]} onSubmit={speciesSubmitHandler}>
-        <h2 className="centered">Add A New Species</h2>
+        <h3 className="centered">Add A New Species</h3>
         <Input
           id="commonName"
           element="input"

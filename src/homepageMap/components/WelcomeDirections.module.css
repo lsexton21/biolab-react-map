@@ -13,16 +13,12 @@
     animation: 1s ease-in-out moveLeft 6s forwards;
 }
 
-@media (max-width: 1300px) {.welcomeContainer {
-    animation: 0.5s ease-in-out moveLeft forwards;
-}}
-
 .hideWelcomeContainer {
     animation: 0.5s ease-in-out moveDown forwards;
 }
   
 .welcomeTextContainer {
-    margin-right: 20rem;
+    margin-right: 10rem;
     margin-left: 15rem;
     padding: 2rem;
     display: flex;
@@ -34,12 +30,10 @@
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-    .welcomeTextContainer {
-        margin-left: 5rem;
-        margin-right: 0;
-    }
-}
+@media (max-width: 600px) and (-webkit-max-device-pixel-ratio: 4) {.welcomeTextContainer {
+    margin-left: 10rem;
+    margin-right: 0;
+}}
   
 .welcomeTitle {
 color: #007da7dd;

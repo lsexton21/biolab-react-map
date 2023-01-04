@@ -3,11 +3,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 18rem;
+    margin-top: 24vh;
     background-image: linear-gradient( white 50%, rgb(206, 206, 206) 100%);
     background-attachment: fixed;
-    min-height: calc(100vh - 18rem);
+    min-height: calc(100vh - 24vh);
 }
+
+@media (max-width: 1000px) and (-webkit-max-device-pixel-ratio: 4) {.homepageContainer {
+    margin-top: 18vh;
+    min-height: calc(100vh - 18vh);
+}} 
+
 .homepageLinks {
     display: flex;
     justify-content: center;

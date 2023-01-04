@@ -5,12 +5,11 @@
     position: relative;
     background: #9ae07fe1;
     background: transparent;
-    bottom: 2rem;
   }
   
   .main-navigation__menu-btn {
-    height: 5rem;
-    width: 5rem;
+    height: 6rem;
+    width: 6rem;
     background-color: #9ae07fe1;
     display: flex;
     flex-direction: column;
@@ -19,7 +18,6 @@
     cursor: pointer;
     border: 0.2rem solid white;
     border-radius: 50%;
-    margin: 2rem;
   }
 
   .main-navigation__menu-btn span {

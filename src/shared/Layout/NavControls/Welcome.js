@@ -8,7 +8,7 @@ const Welcome = (props) => {
   const authCtx = useContext(AuthContext);
 
   return (
-    <Fragment>
+    <div className={styles.welcomeContainer}>
       <header className={styles["welcome-control"]}>
         <div className={styles["real-container"]}>
           <h1 className={styles.real}>Real</h1>
@@ -35,7 +35,7 @@ const Welcome = (props) => {
           <Auth onShowAuth={props.onShowAuth} showAuth={props.showAuth} />
         </div>
       )}
-    </Fragment>
+    </div>
   );
 };
 
