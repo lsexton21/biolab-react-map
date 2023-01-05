@@ -1,0 +1,29 @@
+[debug] [2023-01-05T18:02:12.602Z] ----------------------------------------------------------------------
+[debug] [2023-01-05T18:02:12.602Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-01-05T18:02:12.603Z] CLI Version:   11.8.0
+[debug] [2023-01-05T18:02:12.603Z] Platform:      darwin
+[debug] [2023-01-05T18:02:12.603Z] Node Version:  v16.14.2
+[debug] [2023-01-05T18:02:12.605Z] Time:          Thu Jan 05 2023 10:02:12 GMT-0800 (Pacific Standard Time)
+[debug] [2023-01-05T18:02:12.605Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-05T18:02:12.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-05T18:02:12.634Z] > authorizing via signed-in user (lucas.j.sexton@gmail.com)
+[debug] [2023-01-05T18:02:12.634Z] [iam] checking project biolabreact-frontend for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-05T18:02:12.635Z] > refreshing access token with scopes: []
+[debug] [2023-01-05T18:02:12.635Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-05T18:02:12.635Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-05T18:02:23.629Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-01-05T18:02:23.631Z] > refreshing access token with scopes: []
+[debug] [2023-01-05T18:02:23.632Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-05T18:02:23.632Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-05T18:02:23.812Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-01-05T18:02:23.812Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-05T18:02:23.857Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biolabreact-frontend [none]
+[debug] [2023-01-05T18:02:41.274Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/biolabreact-frontend
+[debug] [2023-01-05T18:02:41.575Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/biolabreact-frontend
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:242:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project biolabreact-frontend. Please make sure the project exists and your account has permission to access it.

@@ -40,12 +40,11 @@
   color: #fff;
   padding: 0.6rem 1.2rem;
   font-family: monospace;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
   z-index: 1;
   position: absolute;
-  top: 91%;
-  left: 0;
+  top: 90vh;
 }
 
 .button {
@@ -134,15 +133,6 @@
   height: 6rem;
   width: 6rem;
   color: white;
-}
-
-
-
-@media (min-width: 768px) {
-  .sidebar {
-    font-size: 2rem;
-    top: 92%;
-  }
 }
 
 @keyframes markerEntrance {
