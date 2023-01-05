@@ -1,3 +1,11 @@
+.profile-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 5rem;
+}
+
 .profileImg-container {
     display: flex;
     flex-direction: column;
@@ -9,13 +17,6 @@
     border-radius: 50%;
     border: 0.4rem solid white;
     object-fit: cover;
-}
-
-.profile-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    color: white;
 }
 
 .info-container {

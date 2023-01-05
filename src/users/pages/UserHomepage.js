@@ -33,6 +33,7 @@ const UserHomepage = (props) => {
       <ErrorModal error={!!error} onClick={clearError} />
       {!isLoading && filteredUserData[0] && filteredSpeciesData ? (
         <div className={styles.homepageContainer}>
+          <div className={styles.spacer}></div>
           <ul className={styles.homepageLinks}>
             <NavLink
               to={`/users/${filteredUserData[0]._id}/myspecies`}

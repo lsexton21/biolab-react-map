@@ -150,6 +150,7 @@ const NewSpecies = (props) => {
           ADD SPECIES
         </Button>
       </form>
+      <div className={styles.footer}></div>
     </Fragment>
   );
 };

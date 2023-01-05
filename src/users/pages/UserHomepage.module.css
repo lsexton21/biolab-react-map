@@ -5,8 +5,15 @@
     align-items: center;
     margin-top: 24vh;
     background-image: linear-gradient( white 50%, rgb(206, 206, 206) 100%);
-    background-attachment: fixed;
     min-height: calc(100vh - 24vh);
+    overflow:auto;
+}
+
+.spacer {
+    min-height: 2.5rem;
+    position: absolute;
+    background-image: linear-gradient( rgba(255,255,255,1), rgba(255,255,255,0));
+    width: 100%;
 }
 
 @media (max-width: 1000px) and (-webkit-max-device-pixel-ratio: 4) {.homepageContainer {
